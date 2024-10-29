@@ -31,6 +31,7 @@ int partition(int *arr, int low, int high, int arr_size)
 	tmp = arr[high];
 	arr[high] = arr[i + 1];
 	arr[i + 1] = tmp;
+	print_array(arr, arr_size);
 	return (i + 1);
 }
 
