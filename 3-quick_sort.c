@@ -12,12 +12,11 @@
 
 int partition(int *arr, int low, int high, size_t arr_size)
 {
-	int tmp, j;
-
+	int tmp;
 	int pivot = arr[high];
-	int i  = low - 1;
+	int i = low - 1;
 
-	for (j = low; j < high; j++)
+	for (int j = low; j < high; j++)
 	{
 		if (arr[j] <= pivot)
 		{
@@ -27,10 +26,11 @@ int partition(int *arr, int low, int high, size_t arr_size)
 			arr[j] = tmp;
 		}
 	}
-	tmp = arr[high];
-	arr[high] = arr[i + 1];
-	arr[i + 1] = tmp;
-	print_array(arr, arr_size);
+	tmp = arr[i + 1];
+	arr[i + 1] = arr[high];
+	arr[high] = tmp;
+
+	print_array(arr, size);
 	return (i + 1);
 }
 
