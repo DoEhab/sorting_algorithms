@@ -24,13 +24,12 @@ int partition(int *arr, int low, int high, size_t arr_size)
 			tmp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = tmp;
-			print_array(arr ,arr_size);
 		}
 	}
 	tmp = arr[i + 1];
 	arr[i + 1] = arr[high];
 	arr[high] = tmp;
-
+	print_array(arr, arr_size);
 	return (i + 1);
 }
 
