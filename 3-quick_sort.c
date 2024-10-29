@@ -10,7 +10,7 @@
   * Return: return new pivot
   */
 
-int partition(int *arr, int low, int high, int arr_size)
+int partition(int *arr, int low, int high, size_t arr_size)
 {
 	int tmp, j;
 
@@ -44,7 +44,7 @@ int partition(int *arr, int low, int high, int arr_size)
   * Return: void
   */
 
-void quick_sort_recursion(int *arr, int low, int high, int size)
+void quick_sort_recursion(int *arr, int low, int high, size_t size)
 {
 	if (low < high)
 	{
