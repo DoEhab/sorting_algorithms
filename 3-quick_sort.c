@@ -1,6 +1,18 @@
 #include "sort.h"
 
 /**
+  * swap - swaps two integers
+  * @a: first integer
+  * @b: second integer
+  * Return: void
+  */
+void swap(int *a, int *b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+/**
   * partition - to partition the array
   *
   * @arr: array to be partitioned
@@ -12,7 +24,7 @@
 
 int partition(int *arr, int low, int high, size_t arr_size)
 {
-	int tmp, j;
+	int j;
 	int pivot = arr[high];
 	int i = low - 1;
 
@@ -21,15 +33,13 @@ int partition(int *arr, int low, int high, size_t arr_size)
 		if (arr[j] <= pivot)
 		{
 			i++;
-			tmp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = tmp;
+			swap(&arr[i], &arr[j]);
+			print_array(arr, arr_size);
 		}
 	}
-	tmp = arr[i + 1];
-	arr[i + 1] = arr[high];
-	arr[high] = tmp;
+	swap(&arr[i + 1], &arr[high]);
 	print_array(arr, arr_size);
+
 	return (i + 1);
 }
 
